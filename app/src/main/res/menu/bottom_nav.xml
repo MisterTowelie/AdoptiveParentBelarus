@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/button_night_mode"
+        android:icon="@drawable/ic_menu_day_sun"
+        android:orderInCategory="1"
+        android:title="@string/night_mode"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/button_debug"
+        android:icon="@drawable/ic_menu_email_3d_mail"
+        android:orderInCategory="2"
+        android:title="@string/menu_debug"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/button_version"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="3"
+        android:title="@string/menu_version"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/button_license"
+        android:icon="@drawable/ic_next_step_write"
+        android:orderInCategory="4"
+        android:title="@string/menu_license"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/button_exit"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="5"
+        android:title="@string/menu_exit"
+        app:showAsAction="withText" />
+
+</menu>
