@@ -37,12 +37,6 @@
 
 Если у вас есть сообщения об ошибках, пожелания или вопросы, откройте [Issues](https://github.com/MisterTowelie/AdoptiveParentBelarus/issues) или отправьте нам сообщение
 
-## Пожертвования:
-Пожертвование не являются обязательными условиями для использования приложения Усыновление в Республике Беларусь.
-Хотя Усыновление в Республике Беларусь не поддерживает никаких покупок, пожертвования могут быть отправлены разработчику, чтобы поддержать его и его работу!
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/xxxx)
-
 ## License
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 This program is Free Software: You can use, study share and improve it at your
