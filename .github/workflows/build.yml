@@ -29,13 +29,6 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       
-    - name: Find output files (Unix)
-      run: |
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "output_files<<$EOF" >> $GITHUB_ENV
-          find out/make/zip -name "*.zip" >> $GITHUB_ENV
-          echo "$EOF" >> $GITHUB_ENV
-          
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
@@ -60,14 +53,6 @@ jobs:
 
       steps:
       - uses: actions/download-artifact@v5
-
-      - name: Find zip files
-        id: find-zip-files
-        run: |
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "articact_files<<$EOF" >> $GITHUB_ENV
-          find . -name "*.zip" >> $GITHUB_ENV
-          echo "$EOF" >> $GITHUB_ENV
 
       - name: Release
         uses: softprops/action-gh-release@v2
