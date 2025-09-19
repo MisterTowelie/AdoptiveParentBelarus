@@ -3,12 +3,13 @@ name: Android CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    paths-ignore:
+      - 'art/**'
+      - 'README*'
+      - '.github/**'
 
 jobs:
   build:
-
     runs-on: ubuntu-22.04
 
     steps:
