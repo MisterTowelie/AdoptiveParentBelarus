@@ -28,6 +28,19 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+      
+    - name: Find output files (Unix)
+      run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "output_files<<$EOF" >> $GITHUB_ENV
+          find out/make/zip -name "*.zip" >> $GITHUB_ENV
+          echo "$EOF" >> $GITHUB_ENV
+          
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+          name: AdoptiveParentBelarus
+          path: ${{ env.output_files }}
 
     - name: Determine whether release
       id: whether_release
@@ -46,7 +59,7 @@ jobs:
           contents: write
 
       steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v5
 
       - name: Find zip files
         id: find-zip-files
@@ -57,7 +70,7 @@ jobs:
           echo "$EOF" >> $GITHUB_ENV
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.head_commit.message }}
           files: ${{ env.articact_filesS }}
