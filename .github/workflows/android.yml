@@ -11,17 +11,29 @@ on:
 
 jobs:
   build:
+  
     runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v5
+      with:
+        submodules: recursive
+        
     - name: set up JDK 20
       uses: actions/setup-java@v5
       with:
         java-version: '20'
         distribution: 'adopt'
+        cache: gradle
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+      
+    - name: Build debug APK with Gradle
+      run: ./gradlew assembleDebug --info
+      
+    - name: Upload debug APK as artifact
+      uses: actions/upload-artifact@v4
+      with:
+          name: Usynovlenie_v_PB_debug
+          path: app/build/outputs/
